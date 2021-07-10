@@ -1,0 +1,8 @@
+#! /bin/sh
+python3 -m pip install numpy
+python3 -m pip install scikit
+python3 -m pip install sklearn
+python3 -m pip install pandas
+python3 -m pip install matplotlib
+python3 -m pip install jupyter
+python3 -m pip install random
