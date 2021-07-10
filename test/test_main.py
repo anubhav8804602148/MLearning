@@ -1,9 +1,10 @@
 import random as rd
 import json
 
-f = open(r"/projects/my_project/MLearning/data/student_list.csv", "w+")
-
+f = open(r"/projects/my_project/MLearning/data/student_list.json", "w+")
+f.write("[")
 for i in range(10000):
+
   fname = [chr(int(97+26*rd.random())) for i in range(5+int(rd.random()*10))]
   lname = [chr(int(97+26*rd.random())) for i in range(5+int(rd.random()%10))]
   fname[0] = fname[0].upper()
@@ -22,8 +23,10 @@ for i in range(10000):
     'Name' : name,
     'Class' : std,
     'Age' : age,
-    'Height' : height,
-    'Weight' : weight,
+    'Height' : round(height,2),
+    'Weight' : round(weight,2),
 
   })
-  f.write(stud_data+"\n")
+  f.write(stud_data+",\n")
+
+f.write("]")
